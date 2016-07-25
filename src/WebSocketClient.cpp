@@ -39,9 +39,9 @@ using namespace std;
 
 WebSocketClient::WebSocketClient()
 {
-	mClient.clear_access_channels( websocketpp::log::alevel::all );
-	mClient.clear_error_channels( websocketpp::log::elevel::all );
-	
+  mClient.set_access_channels( websocketpp::log::alevel::none );
+  mClient.set_error_channels( websocketpp::log::elevel::none );
+
 	mClient.init_asio();
 
 	mClient.set_close_handler(			bind( &WebSocketClient::onClose,		this, &mClient, std::placeholders::_1 ) );

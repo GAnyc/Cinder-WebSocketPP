@@ -43,9 +43,9 @@ using namespace std;
 
 WebSocketServer::WebSocketServer()
 {
-	mServer.set_access_channels( websocketpp::log::alevel::all );
-	mServer.clear_access_channels( websocketpp::log::alevel::frame_payload );
-	
+	mServer.set_access_channels( websocketpp::log::alevel::none );
+  mServer.set_error_channels( websocketpp::log::elevel::none );
+
 	mServer.init_asio();
 	
 	mServer.set_close_handler(			bind( &WebSocketServer::onClose,		this, &mServer, std::placeholders::_1 ) );
