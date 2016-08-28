@@ -62,7 +62,7 @@ public:
 	~WebSocketConnection();
 
 	virtual void	ping( const std::string& msg ) = 0;
-	virtual void	poll() = 0;
+	virtual std::size_t	poll() = 0;
 	virtual void	write( const std::string& msg ) = 0;
 
 	const websocketpp::connection_hdl&	getHandle() const;

@@ -123,9 +123,9 @@ void WebSocketClient::ping( const string& msg )
 	}
 }
 
-void WebSocketClient::poll()
+std::size_t WebSocketClient::poll()
 {
-	mClient.poll();
+	return mClient.poll();
 }
 
 void WebSocketClient::write( const std::string& msg )

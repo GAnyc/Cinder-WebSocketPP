@@ -53,7 +53,7 @@ public:
 	void			connect( const std::string& uri );
 	void			disconnect();
 	void			ping( const std::string& msg = "" );
-	void			poll();
+	std::size_t	poll();
 	void			write( const std::string& msg );
 	
 	Client&			getClient();

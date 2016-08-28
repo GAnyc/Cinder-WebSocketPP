@@ -53,7 +53,7 @@ public:
 	void			cancel();
 	void			listen( uint16_t port = 80 );
 	void			ping( const std::string& msg = "" );
-	void			poll();
+	std::size_t	poll();
 	void			run();
 	void			write( const std::string& msg );
 	void			write( void const * msg, size_t len );

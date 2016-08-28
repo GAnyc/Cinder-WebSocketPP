@@ -119,9 +119,9 @@ void WebSocketServer::ping( const string& msg )
 	}
 }
 
-void WebSocketServer::poll()
+std::size_t WebSocketServer::poll()
 {
-	mServer.poll();
+	return mServer.poll();
 }
 
 void WebSocketServer::run()
